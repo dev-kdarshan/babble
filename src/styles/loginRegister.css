@@ -1,0 +1,182 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family:Sniglet;
+}
+
+:root {
+  --form-hading:Happy Monkey;
+  --field-text:Sniglet;
+  --field-label:Comic Neue;
+}
+
+body {
+    background-color: #2c2c40;
+    color: #fff;
+    font-family: Arial, sans-serif;
+  }
+
+  .main-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+  }
+
+  .card {
+    background-color: #3a3a55;
+    border: none;
+    border-radius: 15px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: row;
+    width: 1000px;    
+    max-width: 100%;
+  }
+
+  .carousel-section {
+    width: 50%;
+    position: relative;
+  }
+
+  .carousel-section img {
+    object-fit:cover;
+    height: 100%;
+    width: 100%;  
+    aspect-ratio: 4/3;
+  }
+
+  .carousel-text {
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    color: #fff;
+  }
+  .appName{
+    font-family: Lacquer;
+    text-transform: uppercase;
+    font-size: 40px;
+  }
+  .appTagline{
+    font-family: Indie Flower;
+  }
+
+  .form-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 70vh;
+  }
+
+  .form-section {
+    width: 50%;
+    padding: 40px;
+    background-color: #2c2c40;
+  }
+  .form-label{
+    font-family: var(--field-label);
+    
+  }
+  .form-control{
+    font-family: var(--field-text);
+  }
+
+   .heading{
+    font-family: var(--form-hading);
+    margin-bottom: 20px;
+    font-weight: 500;
+  }
+
+  .btn-primary {
+    background-color: #6a5acd;
+    border: none;
+  }
+
+  .btn-primary:hover {
+    background-color: #7b6feb;
+  }
+
+  .social-buttons img {
+    width: 100px;
+    height: 60px;
+    aspect-ratio: 4/3;
+    object-fit: contain;
+    cursor: pointer;
+  }
+
+  a {
+    color: #7b6feb;
+  }
+
+  a:hover {
+    text-decoration: underline;
+  }
+
+  .login-button{
+    width: 25vw;
+  }
+
+  
+@media screen and (max-width: 480px){
+.card{
+  display: flex;
+  flex-direction: column;
+  /* border: 2px solid yellow; */
+  height: 100vh;
+}
+.main-container {
+  position: fixed;
+  bottom: 0%;
+  height: 100vh;
+  /* border: 1px solid red; */
+  padding: 0 ;
+}
+.carousel-section {
+ height: 50%;
+ width: 100vw;
+ /* border: 2px solid green; */
+}
+.carousel-section img {
+  object-fit:cover;
+  height: 100%;
+  width: 100%;  
+  aspect-ratio: 2/2;
+  /* border: 1px solid green; */
+  
+}
+.form-container {
+  min-height: 10vh;
+  padding: 5% 0;
+  /* border: 5px solid red; */
+  z-index: 1;
+}
+.login-button{
+  width: 85vw;
+}
+.carousel-text {
+  position: absolute;
+  bottom: 0%;
+  left: -5%;
+  height: 100%;
+  width: 110vw;
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: black;
+  background-color:rgba(105, 90, 205, 0.722) ;
+  backdrop-filter: blur(35px);
+  border: 1px solid purple;
+}
+.appName{
+  font-size: 90px;
+  z-index: 1;
+}
+.appTagline{
+  font-size: 20px;
+  z-index: 1;
+}
+}
+
+ 
