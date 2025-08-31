@@ -15,3 +15,4 @@ const chatSchema = new mongoose.Schema({
 });
 
 module.exports = mongoose.model('Chat', chatSchema);
+// chat.js to Chat.js name is changed 
