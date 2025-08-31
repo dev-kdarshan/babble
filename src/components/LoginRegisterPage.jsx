@@ -7,7 +7,7 @@ const LoginRegisterPage = () => {
   const [isLogin, setIsLogin] = useState(false);
   const [showCarouselText, setShowCarouselText] = useState(true);
   const navigate = useNavigate(); // ✅ Initialize navigation
-
+  const API = process.env.REACT_APP_BASE_API_URL;
   // Refs for form fields
   const nameRef = useRef();
   const emailRef = useRef();
@@ -27,11 +27,11 @@ const LoginRegisterPage = () => {
   const handleRegister = async (e) => {
     e.preventDefault();
     const name = nameRef.current.value;
-    const email = emailRef.current.value;
-    const password = passwordRef.current.value;
+    const email = emailRef.current.value.trim();
+    const password = passwordRef.current.value.trim();
 
     try {
-      const response = await axios.post('http://localhost:5000/api/register', {
+      const response = await axios.post(`${API}/api/register`, {
         name, email, password,
       });
       alert(response.data.message);
@@ -44,11 +44,11 @@ const LoginRegisterPage = () => {
   // ✅ Login handler
 const handleLogin = async (e) => {
   e.preventDefault();
-  const email = loginEmailRef.current.value;
-  const password = loginPasswordRef.current.value;
+  const email = loginEmailRef.current.value.trim();
+  const password = loginPasswordRef.current.value.trim();
 
   try {
-    const response = await axios.post('http://localhost:5000/api/login', {
+    const response = await axios.post(`${API}/api/login`, {
       email,
       password,
     });
@@ -57,9 +57,8 @@ const handleLogin = async (e) => {
 
     if (response.data.token) {
       localStorage.setItem('user', JSON.stringify(response.data.user));
-      localStorage.setItem('token', response.data.token); // ✅ Save JWT token
-
-      navigate('/chat'); // ✅ Redirect to ChatPage
+      localStorage.setItem('token', response.data.token); 
+      navigate('/chat'); 
     } else {
       alert('Login failed: No token received');
     }
@@ -98,7 +97,7 @@ const handleLogin = async (e) => {
         </div>
 
         {/* Form Section */}
-        <div className="col-md-6 form-container bg-light">
+        <div className="col-md-6 form-container bg-dark">
           {!isLogin ? (
             <div className="p-4" id="registration-form">
               <h2 className="heading">New User Registration</h2>

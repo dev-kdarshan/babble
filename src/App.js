@@ -10,7 +10,7 @@ function App() {
     <Router>
       <Routes>
         <Route path="/" element={<LoginRegisterPage />} />
-        <Route path="/chat" element={user ? <ChatPage /> : <Navigate to="/" />} />
+        <Route path="/chat" element={user ? <ChatPage /> : <Navigate to="/chat" />} />
       </Routes>
     </Router>
   );
