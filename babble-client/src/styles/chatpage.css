@@ -675,10 +675,10 @@ body {
 }
 
 /* Responsive Dark Mode */
-@media (max-width: 768px) {
+@media screen and (max-width: 768px) {
   .chat-container {
-    margin: 10px;
-    border-radius: 16px;
+    height: 90vh;
+    width: 90vw;
   }
   
   .sidebar {
@@ -719,9 +719,11 @@ body {
 
 @media (max-width: 640px) {
   .chat-container {
-    margin: 8px;
+
     flex-direction: column;
     border-radius: 12px;
+     height: 90vh;
+    width: 90vw;
   }
   
   .sidebar {
@@ -780,16 +782,13 @@ body {
 @media screen and (max-width: 768px) {
   body {
     height: 100vh;
-    overflow: hidden;
+    overflow: scroll;
     padding: 0;
     margin: 0;
   }
 
   .chat-container {
-    width: 100vw;
-    height: 100vh;
-    margin: 0;
-    border-radius: 0;
+    border-radius: 10px;
     flex-direction: column;
     overflow: hidden;
   }
@@ -954,7 +953,7 @@ body {
 @media screen and (max-width: 768px) and (orientation: landscape) {
   .chat-container {
     flex-direction: row;
-    height: 100vh;
+    height: 90vh;
   }
 
   .sidebar {
