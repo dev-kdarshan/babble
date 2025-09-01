@@ -47,6 +47,7 @@ npm install
 npm start
 ```
 ### Backend
+2. 
 ```bash
 cd babble-backend
 npm install
